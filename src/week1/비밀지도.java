@@ -9,11 +9,14 @@ public class 비밀지도 {
         int[][] a2 = new int[n][n];
 
         for (int i = 0; i < n; i++) {
-            Stack<Integer> a1Stack = new Stack<>(); Stack<Integer> a2Stack = new Stack<>();
-            int x = arr1[i]; int y = arr2[i];
+            Stack<Integer> a1Stack = new Stack<>();
+            Stack<Integer> a2Stack = new Stack<>();
+            int x = arr1[i];
+            int y = arr2[i];
 
             for (int j = 0; j < n - 1; j++) {
-                a1Stack.push(x % 2); a2Stack.push(y % 2);
+                a1Stack.push(x % 2);
+                a2Stack.push(y % 2);
                 x /= 2; y /= 2;
             }
             a1Stack.push(x); a2Stack.push(y);
