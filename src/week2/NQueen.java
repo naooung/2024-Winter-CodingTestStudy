@@ -1,7 +1,43 @@
 package week2;
 
 public class NQueen {
+    int n;
+    int chess[];
+    int count;
 
+    public int solution(int n) {
+        // 전역 변수 초기화
+        this.n = n;
+        chess = new int[n];
+        count = 0;
+
+        nQueen(0);
+
+        return count;
+    }
+
+    public void nQueen(int index) {
+
+        if (index == n) {
+            count++;
+            return;
+        }
+
+        for (int i = 0; i < n; i++) {
+            chess[index] = i;
+            if (checkMove(index) == true)
+                nQueen(index + 1);
+        }
+    }
+
+    // @Param index가 가로, 세로, 대각선에 위치하는지 확인
+    public boolean checkMove(int index) {
+        for (int i = 0; i < index; i++) {
+            if (chess[i] == chess[index] || Math.abs(i - index) == Math.abs(chess[index] - chess[i]))
+                return false;
+        }
+        return true;
+    }
 }
 
 /* 실패 코드 1
