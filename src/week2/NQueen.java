@@ -17,7 +17,6 @@ public class NQueen {
     }
 
     public void nQueen(int index) {
-
         if (index == n) {
             count++;
             return;
