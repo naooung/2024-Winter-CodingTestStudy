@@ -1,7 +1,7 @@
 package week6;
 import java.util.*;
 
-class Solution {
+public class 체육복 {
     public int solution(int n, int[] lost, int[] reserve) {
         HashSet<Integer> reserveSet = new HashSet<>(); // 여벌옷이 있는 학생 집합
         for (int i : reserve)
@@ -21,7 +21,7 @@ class Solution {
             else if (lostSet.contains(i + 1)) // 뒷번호 학생
                 lostSet.remove(i + 1);
         }
-
+기
         return n - lostSet.size();
     }
 }
